@@ -1,55 +1,45 @@
 {
-  "name": "@godsreveal/vercel-bun",
-  "version": "0.2.2",
-  "description": "Bun runtime for Vercel serverless functions",
-  "keywords": [
-    "vercel",
-    "bun",
-    "serverless",
-    "runtime",
-    "typescript",
-    "javascript",
-    "elysia",
-    "nextjs",
-    "redis",
-    "s3",
-    "r2"
-  ],
-  "author": {
-    "name": "Johnny Woodtke"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/johnny-woodtke/vercel-bun",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnny-woodtke/vercel-bun.git"
-  },
-  "bugs": {
-    "url": "https://github.com/johnny-woodtke/vercel-bun/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "rm -rf dist && tsc && cp -r src/bootstrap src/runtime dist",
+    "dev:next": "next dev -p 3001",
+    "dev:api": "bun run --watch api/index.ts",
+    "build": "next build",
     "check-types": "tsc --noEmit",
-    "build:vercel": "bunx vercel build",
-    "pull:vercel": "bunx vercel pull",
-    "e2e": "bun test example/e2e bench/e2e"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "jszip": "^3.10.1"
+    "@elysiajs/cors": "^1.3.1",
+    "@elysiajs/eden": "^1.3.1",
+    "@hookform/resolvers": "^5.0.1",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@tanstack/react-query": "^5.79.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "elysia": "^1.3.1",
+    "lucide-react": "^0.511.0",
+    "next": "15.3.2",
+    "next-themes": "^0.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.4",
+    "sonner": "^2.0.3",
+    "tailwind-merge": "^3.3.0",
+    "uuid": "^11.1.0",
+    "zod": "^3.25.33"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.15"
-  },
-  "peerDependencies": {
-    "typescript": "^5",
-    "@vercel/build-utils": "^10.5.1"
+    "@tailwindcss/postcss": "^4",
+    "@types/bun": "^1.2.13",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.0",
+    "typescript": "^5"
   }
 }
